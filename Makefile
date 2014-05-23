@@ -30,7 +30,7 @@ EPSGRAPHICSFILES =
 # for PDF output, pdftex is probably best
 PDFMETHOD = pdftex
 
-default: view
+default: pdf
 
 # other likely defaults that you can use
 #default: view-mac
@@ -144,21 +144,6 @@ clean-all: clean
 	$(RM) -f $(PAPER).pdf $(PAPER).ps
 	$(RM) -f $(PDFGRAPHICSFILES)
 #	cd data && make clean
-
-
-#
-# view - view the PDF document
-#
-# on Mac OS X, open a document using the "open" command, e.g.
-#  open $(PAPER).pdf
-# on Cygwin, open a document using the "cygstart" (cygstart.exe) command, e.g.
-#  cygstart $(PAPER).pdf
-
-view: pdf
-	open $(PAPER).pdf
-
-view-cygwin: pdf
-	cygstart $(PAPER).pdf
 
 
 #
