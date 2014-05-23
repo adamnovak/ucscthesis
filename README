@@ -1,0 +1,237 @@
+This is the README file for the UCTHESIS class for LaTeX.  It
+corresponds to version 3.2 of the UCTHESIS class (19 December 2004).
+This README is public domain.
+
+The only change from 3.1 to 3.2 is to clarify the license as LPPL, per
+Daniel Gildea.  3.2 was prepared by Karl Berry.
+Version 3.1 was prepared by Daniel Gildea.
+
+NOTE: v3.0 is the first LaTeX2e version of UCTHESIS.  It is now a
+class that runs in native LaTeX2e mode.  It is functionally identical
+to UCTHESIS.STY v2.7 released on 30 October 1994 by Ethan V. Munson.
+Other than changes for compatibility (mostly having to do with font
+selection), and option selection, very little modification has been
+done to the style.  As a result, there are probably cleaner ways to
+implement a number of features.  That will have to wait for the next
+release.  (BBF 10/31/94)
+
+========================
+Using the UCTHESIS class
+========================
+
+Sample File
+-----------
+
+There is a sample dissertation (by the fictitious, but very
+irritating, Perry H Disdainful) in the file uctest.tex.  It also uses
+uctest.bib as its bibliography database (though the contents of the
+database are not important).  Mostly this is useful as an example of
+how to produce the front matter.  If you don't understand LaTeX at
+all, this file might help you get started, but, since you're going to
+be writing a 100+ page document, you should invest the $20 in a copy
+of the LaTeX manual (by Leslie Lamport the original author of LaTeX).
+This has recently been updated for LaTeX2e.
+
+The LaTeX Companion, by Goossens, Mittelbach, and Samarin (who have been
+involved in developping and supporting the new version of LaTeX) is also quite
+good.  It gives a lot of useful information if you are going to be writing
+or modifying classes,  and gives a lot of additional information on commonly
+available style packages.  It's about $35.
+
+Choosing the UCTHESIS class
+---------------------------
+
+To use the UCTHESIS class, make sure that the ucthesis.cls file is on
+your TEXINPUTS search path and use the following command at the start
+of your input file:
+
+\documentclass{ucthesis}
+
+============================
+What the UCTHESIS class does
+============================
+
+The UCTHESIS class is a port of the UCTHESIS style version 2.7 (the
+final 2.09 release) to LaTeX2e.  The UCTHESIS style is a modified
+version of the standard LaTeX REPORT style that is accepted for use
+with University of California PhD dissertations and Masters theses.
+The available commands are almost identical to those of the REPORT style,
+so your best starting point for documentation is the LaTeX manual written
+by Leslie Lamport.
+
+The key features of the class are:
+
+1) The primary modification to the REPORT style is the use of
+pseudo-double-spacing, since the UC system's rules are still designed
+for typewriters.  This is achieved by increasing the \baselinestretch
+parameter to 1.37.  The \baselinestretch is returned to a
+single-spaced value of 1.00 for elements like tables, captions, and
+footnotes and for all displayed text (quote, quotation, and verse
+environments).  Unfortunately, this is done with a macro called \ssp
+which resets the font size to \normalsize.  In LaTeX 2.09 this seems
+to be unavoidable, but it makes it very hard to create tables in
+different font sizes.
+
+2) Margins are 1.5 inches on the left, 1.0 inches elsewhere.
+
+3) Uses 11 point by default; you can use the 10pt or 12pt options for
+those sizes.
+
+4) Page numbers are in the top right corner for all pages.
+
+5) Complete, correct front matter for UC dissertations can be
+generated.  If you are not a UC student, you should make sure that the
+front matter is OK with your school.
+
+Options
+---------------
+
+There are five primary options:
+
+The "draft" style uses single-spacing throughout the document.
+
+The "final" style uses the correct pseudo-double-spacing.  This option
+is the default and is redundant, but is included for symmetry.
+
+The "10pt", "11pt", and "12pt" styles set the default font size to the
+obvious value.  The "11pt" option is the default and thus is
+redundant, but is safe to use anyway.
+
+The options are selected on the \documentclass line, e.g.:
+
+\documentclass[10pt,draft]{ucthesis}
+
+Page Headers
+------------
+
+If you want to use page headers or footers other than the default
+ones, you should try using "headerfooter.sty" or "fancyheadings.sty".
+The myheadings pagestyle doesn't work well and there is no workaround.
+The headerfooter and fancyheadings styles are widely distributed, well
+documented, and easy to use.
+
+============
+Front matter
+============
+
+The other key service provided by this class is that it generates
+correct front matter (title page, approval page, abstract, etc.) with
+a failrly simple set of commands.  This facility could be a little
+easier, but compared to an earlier state of affairs, it's pretty
+slick.  The format of the front matter is specified quite explicitly
+in the document "Guidelines for Submitting a Doctoral Dissertation or
+Master's Thesis" distributed by the UC Berkeley Graduate Division.
+The current version of the class is based on the 2001 version of
+this document.  
+
+A complete example of the use of the front matter commands can be
+found in the sample dissertation distributed with the class.
+
+Declarations
+------------
+
+To use the front matter macros and environments, you must first
+declare a number of text strings:
+
+\title		Dissertation title
+\author		Your name as registered with UC (usually w/ full
+		middle name)
+\degreeyear	Year your dissertation will be granted
+\degreesemester	Semester (or quarter) your dissertation will be granted
+\degree		The title of your degree (e.g. Doctor of Philosophy)
+\chair		Title and name of your committee chair
+		(e.g. "Professor Michael A. Harrison")
+\othermembers	The names of the other members of your committee
+		separated by linebreaks
+		(e.g. "Professor Susan L. Graham\\Professor Jim Pitman)
+\numberofmembers The number of members on your committee.  This defaults to
+		3 (and thus is optional) and can be any value between
+		3 and 6.  It affects the number of lines on the approval
+		page and the space between them.
+\prevdegrees	Your previous degrees
+		"B.A. (University of California, San Diego) 1978\\
+		B.A. (University of California, San Diego) 1986\\
+		M.S. (University of California, Berkeley) 1989"
+\field		The official title of your field.  This is usually
+		your department's name, but at Berkeley, most
+		Engineering degrees have a more complex name.
+		Be sure to check the guidelines for any special
+		twists on the name of your field.
+\campus		The name of your UC campus.  This should be capitalized.
+		(e.g. Berkeley)
+
+Title, Approval, and Copyright pages
+------------------------------------
+
+The title, approval, and copyright pages have extremely rigid formats
+that allow them to be generated automatically once the above
+declarations have been made.  To generate them, invoke the macros
+
+	\maketitle
+	\approvalpage
+	\copyrightpage
+
+You should probably invoke them in that order, because that's the
+order required by the guidelines.
+
+Abstract Environment
+--------------------
+
+Because you have to provide the text of the abstract, only the title
+can be generated automatically.  So, there is an abstract environment.
+It generates the title and numbers the abstract in arabic numerals and
+makes sure that it starts on new page.
+
+The UC system requires that your advisor sign the last page of your
+abstract.  Many students just let their advisor just sign at a random
+location on the page, but you can use the \abstractsignature command
+to generate a signature line with your advisor's name printed below
+it.  This command generates the signature line at the point it is
+invoked, so it should be placed at the end of the abstract.
+
+Other Front Matter
+------------------
+
+The remaining front matter (dedication, table of contents, lists of
+figures and tables, acknowledgements) MUST be put inside the
+"frontmatter" environment, which ensures that page-numbering is
+handled properly.  Within this frontmatter environment, you put the
+environments and commands for the rest of the front matter.  There are
+environments for "dedication" and "acknowledgements" and the standard
+LaTeX commands for producing \tableofcontents, \listoffigures, and
+\listoftables.  
+
+The standard LaTeX commands are well documented in the LaTeX manual.
+You will probably have to hand edit the .lof (list of figures) and
+.lot (list of tables) files to make verbose captions more suitable for
+this front matter.  Once you do this, remember to use the \nofiles
+macro to keep them from getting overwritten.
+
+The acknowledgements and dedication environments make their contents
+start on a new page.  The acknowledgements environment also put the
+word "Acknowledgements" in large, bold, centered text at the top of
+the page.  For formatting the dedication page, you're on your own.
+After all, the dedication is a kind of poetry and there's no
+predicting the right way to format poetry.
+
+=====================================================
+Other commands not found in the standard report style
+=====================================================
+
+The "smalltabular" and "smalltabular*" environments are equivalent to
+the "tabular" and "tabular*" environments, except that they use the
+\small font.  The "scriptsizetabular" and "scriptsizetabular*" use the
+\scriptsize font.
+
+=============================
+Installing the UCTHESIS class
+=============================
+
+To install the UCTHESIS class, you need to install four files:
+
+	ucthesis.cls
+	uct10.clo
+	uct11.clo
+	uct12.clo
+
+in your LaTeX class file repository.

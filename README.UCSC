@@ -1,0 +1,223 @@
+This is the README.UCSC file for the UCTHESIS-UCSC class for LaTeX. It
+corresponds to version 3.2-ucsc-2 of the UCTHESIS-UCSC class (04
+May 2006). These instructions supercede README.
+
+The original UCTHESIS class corresponds to version 3.2 of the UCTHESIS
+class (19 December 2004).  This README.UCSC is public domain.
+
+The version of these files are intended to be used with the University
+of California, Santa Cruz Division of Graduate Studies "Dissertation
+and Thesis Preparation Guidelines" revised 7/2005. It intends to merge
+back changes from the two lines of development on the "ucthesis.cls"
+and "ucscthesis.cls" files.
+
+Although the UCTHESIS class is intended to be used at all University
+of California campuses, the guidelines vary from campus to campus. A
+cursory survey of the guidelines at Berkeley, Los Angeles, San Diego,
+and Santa Cruz campuses show mildly differing guidelines. The main
+differences come from the location of the page numbers which vary
+centered and outside in the header and footer area, slight variations
+in margin sizes, and the layout in the front matter. The UCTHESIS-UCSC
+class was created in order to provide a class file that was suitable
+for the guidelines mentioned above.
+
+*** How to use this package
+
+1. unpack the ucscthesis-ucsc.tar.gz file
+2. cd into the ucscthesis-ucsc directory
+3. type "make" (or gmake) to generate a sample PDF file
+4a. modify uctest.tex in this directory
+    OR
+4b. copy uct1*.clo and ucthesis.cls to the directory with your .tex files
+
+
+*** Changes from 3.2-ucsc-2 and 3.2-ucsc-1 (04 May 2006)
+
+- Reverted copyright notice to read
+	"Copyright (c) 2005
+	 by
+	 Author Name", as required by UCSC Grad Division. I presume
+	this would also conform to US Copyright "Form of Notice".
+
+- Added (GNU) Makefile to easily generate a test PDF
+
+- updated history.dot and history.pdf
+
+
+*** Changes from 3.2-ucsc-1 and 3.2-ucsc (02 March 2005)
+
+- added new declarations
+
+	\deanlineone{Dean John Doe}
+	\deanlinetwo{Vice Provost and Dean of Graduate Studies}
+	\deanlinethree{}
+
+- modified \tableofcontents from "Contents" to "Table of Contents"
+
+- included history.dot and history.pdf files
+
+	dot/graphviz file (.dot) and graphic output (.pdf) of the
+	lineage of these files
+
+
+*** Changes to UCSCTHESIS-UCSC from earlier versions and the UCTHESIS
+  classes
+
+
+The changes from ucscthesis.cls (3.0) to ucthesis.cls (ucthesis-ucsc
+3.2) include the following:
+
+- merge from the branch ucscthesis.cls (3.0) and main ucthesis.cls
+(3.2)
+
+- Filenames adhere to the UCTHESIS package, not UCSCTHESIS and are
+available at 10, 11, and 12 points:
+
+    uct10.clo
+    uct11.clo
+    uct12.clo
+    ucthesis.cls
+
+- The test file is updated to use the ucthesis.cls file with minor
+changes that are necessary for UCSC.
+
+- Use the spelling "Acknowledgments" instead of "Acknowledg[e]ments".
+
+- maintain the following margins:
+    top:    1.25"
+    left:   1.50"
+    bottom: 1.25"
+    right:  1.25"
+
+- page numbers are centered, at the bottom, INSIDE of the 1.25" margin
+
+- \baselinestretch{1.37} (ucthesis 3.2) instead of
+  \baselinestretch{2} (ucscsthesis 3.0) for "double-spaced text". The
+  stretch of 2 
+
+- Months (December, March, June, and September) are used for the
+quarter a degree is conferred on the title page instead of semesters.
+(Berkeley has been on semesters since 1983.)
+
+- A single title page is also used to list committee members and their
+signatures.
+
+- The Dean of Graduate Studies is hard coded in the uct1*.clo files.
+
+
+- The optional copyright notice is a single line, using the
+    "(c) 2005 Author Name"
+  as prescribed by the US Copyright Office Circular 3, "Form of
+  Notice", not the previous notice used by both ucscthesis.cls (3.0)
+  and ucthesis (3.0-3.2).
+
+- Optional dedication section.
+
+- Abstract pages do not show page numbers. Abstract page number is
+  updated correctly even though it is not shown.
+
+- Two-sided printing uses centered page numbers in the footers.
+
+
+*** Tweaking
+
+
+- Font Size
+
+The document format is customized for three different typeface
+pointsizes: 10 point, 11 point, and 12 point. The size can be
+specified as an option like this:
+
+    \documentclass[11pt]{ucthesis}
+
+The "uct11.clo" file is used in this case.
+
+Chapter headings font sizes must be modified in the uct1*.clo files.
+
+
+- Line spacing
+
+"Double spacing" is specified in the UCSC Dissertation and Thesis
+Preparation Guidelines. With some typefaces, for instance Times, the
+interline spacing (\baselinestretch = \baselineskip x scaling) may be
+too large due to font metrics indicating a very large leading. In this
+case, redefine \dsp to be a factor between 1.37 and 2.0 like this:
+
+    \def\dsp{\def\baselinestretch{1.8}\large\normalsize}
+    \dsp
+    \usepackage{times}
+    ...
+
+With 11 point Times, a reasonable number of double-spaced
+lines on a page is 23 or 24. The "1.8" factor will yield this.
+
+
+- Page format
+
+Differences in uct11.clo:
+
+                ucthesis-ucsc           ucthesis
+                ------------------      ------------------
+\voffset        1.000 in (default)      1.000 in
+\topmargin      0.250 in                0     in    
+\headheight     0     in (default)      12    pt
+\headsep        0     in (default)      25    pt
+\textheight     8.125 in                32\baselineskip + \topskip
+\footskip       0.375 in                30    pt
+\textwidth      5.750 in                6.000 in
+
+These can be tweaked slightly. For instance, increasing \footskip to
+0.5in and reducing \textheight to 8.0in will set off the page number
+from the last line of text on a page a little bit more.
+
+
+- Printing
+
+When using PostScript or PDF output devices, do not crop oversized
+pages. The margins should measure exactly as described above. If the
+page is shifted, then \voffset can be tweaked slightly. If the text is
+too large, then the printer driver should be adjusted to scale
+slightly. I have not found that any adjustments were necessary.
+
+
+- Packages
+
+I have tested the following packages with this .cls file. Sometimes
+the order of usepackage matters. The following order worked for me.
+
+    ifthen
+    pdftex  (option to ucthesis)
+    dvips   (option to ucthesis)
+    times
+    mathptmx
+    graphicx
+    url
+    color
+    hyperref
+    algorithm
+    algorithmic
+
+
+*** Tracking Changes
+
+As of May 2006, no configuration management system was used to
+store or track these changes. I don't know if one exists and the
+version I received was passed down from PhD candidate to PhD
+candidate. Future maintainers who would like to keep this current are
+encouraged to take the following approach:
+
+- Get the latest version of ucthesis from CTAN.
+- Using these three versions,
+    ancestor = ucthesis (3.2)
+    branch = ucthesis (>3.2)
+    branch = ucthesis-ucsc (3.2-ucsc[-*], this version),
+  produce a new version of ucthesis-ucsc (>3.2)
+
+The original ucthesis source should have been provided with this
+package. By doing so, this ucthesis-ucsc should be compatible with the
+LLPL as described in http://www.latex-project.org/lppl.txt.
+
+Lawrence L. You
+University of California, Santa Cruz
+May 2006
+
