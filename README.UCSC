@@ -1,35 +1,39 @@
-This is the README.UCSC file for the UCTHESIS-UCSC class for LaTeX. It
-corresponds to version 3.2-ucsc-2 of the UCTHESIS-UCSC class (04
-May 2006). These instructions supercede README.
+This is the README file for the UCTHESIS-UCSC class for LaTeX. It corresponds to
+version 3.2-ucsc-3 or greater of the UCTHESIS-UCSC class (23 May 2014). These
+instructions supersede README.old.
 
-The original UCTHESIS class corresponds to version 3.2 of the UCTHESIS
-class (19 December 2004).  This README.UCSC is public domain.
+The original UCTHESIS class corresponds to version 3.2 of the UCTHESIS class (19
+December 2004).  This README.UCSC is public domain.
 
-The version of these files are intended to be used with the University
-of California, Santa Cruz Division of Graduate Studies "Dissertation
-and Thesis Preparation Guidelines" revised 7/2005. It intends to merge
-back changes from the two lines of development on the "ucthesis.cls"
-and "ucscthesis.cls" files.
+The version of these files are intended to be used with the University of
+California, Santa Cruz Division of Graduate Studies "Dissertation and Thesis
+Preparation Guidelines" revised 7/2005. It intends to merge back changes from
+the two lines of development on the "ucthesis.cls" and "ucscthesis.cls" files.
 
-Although the UCTHESIS class is intended to be used at all University
-of California campuses, the guidelines vary from campus to campus. A
-cursory survey of the guidelines at Berkeley, Los Angeles, San Diego,
-and Santa Cruz campuses show mildly differing guidelines. The main
-differences come from the location of the page numbers which vary
-centered and outside in the header and footer area, slight variations
-in margin sizes, and the layout in the front matter. The UCTHESIS-UCSC
-class was created in order to provide a class file that was suitable
-for the guidelines mentioned above.
+Although the UCTHESIS class is intended to be used at all University of
+California campuses, the guidelines vary from campus to campus. A cursory survey
+of the guidelines at Berkeley, Los Angeles, San Diego, and Santa Cruz campuses
+show mildly differing guidelines. The main differences come from the location of
+the page numbers which vary centered and outside in the header and footer area,
+slight variations in margin sizes, and the layout in the front matter. The
+UCTHESIS-UCSC class was created in order to provide a class file that was
+suitable for the guidelines mentioned above.
 
 *** How to use this package
 
-1. unpack the ucscthesis-ucsc.tar.gz file
-2. cd into the ucscthesis-ucsc directory
+1. Fork and clone this Git repository.
+2. cd into the ucscthesis directory
 3. type "make" (or gmake) to generate a sample PDF file
 4a. modify uctest.tex in this directory
     OR
 4b. copy uct1*.clo and ucthesis.cls to the directory with your .tex files
 
+*** Changes from 3.2-ucsc-3 (27 May 2014)
+
+- Modified Makefile to not try to display the built PDF automatically.
+
+- Added a "proposal" option so you can format a thesis/advancement proposal. 
+  It's just like a dissertation, but it calls itself a "proposal".
 
 *** Changes from 3.2-ucsc-2 and 3.2-ucsc-1 (04 May 2006)
 

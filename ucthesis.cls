@@ -17,8 +17,8 @@
 %%% ====================================================================
 %%%  @LaTeX-class-file{
 %%%     filename        = "ucthesis.cls",
-%%%     version         = "3.2-ucsc-2",
-%%%     date            = "04 May 2006",
+%%%     version         = "3.2-ucsc-3",
+%%%     date            = "23 May 2014",
 %%%     license         = "LPPL",
 %%%     codetable       = "ISO/ASCII",
 %%%     keywords        = "LaTeX, ucthesis",
@@ -119,6 +119,7 @@
 % 11 point, onesided, final (ie not draft) mode (BBF 10/31/94)
 \newcommand\@ptsize{}
 \newcommand\@draftmark{}
+\newcommand\@proposalmark{}
 \DeclareOption{10pt}{\renewcommand\@ptsize{0}}
 \DeclareOption{11pt}{\renewcommand\@ptsize{1}}
 \DeclareOption{12pt}{\renewcommand\@ptsize{2}}
@@ -126,7 +127,9 @@
 \DeclareOption{twoside}{\@twosidetrue  \@mparswitchtrue}
 \DeclareOption{draft}{\renewcommand\@draftmark{1}}
 \DeclareOption{final}{\renewcommand\@draftmark{0}}
-\ExecuteOptions{11pt,oneside,final}
+\DeclareOption{proposal}{\renewcommand\@proposalmark{1}}
+\DeclareOption{dissertation}{\renewcommand\@proposalmark{0}}
+\ExecuteOptions{11pt,oneside,final,dissertation}
 
 
 % CHOOSING THE TYPE SIZE:
@@ -187,6 +190,15 @@
 \ifnum \@draftmark = 1
 \ssp				  % Single-spaces and
 \overfullrule 5pt		  % causes overfull hboxes to be marked.
+\fi
+
+% Thesis/Proposal option. If we're a "proposal", we should say that and not 
+% "dissertation" where applicable.
+\def\dissertationname{dissertation}
+\def\Dissertationname{Dissertation}
+\ifnum \@proposalmark = 1
+\def\dissertationname{proposal}
+\def\Dissertationname{Proposal}
 \fi
 
 
@@ -347,7 +359,7 @@
     \bigskip
     {\bfseries {\expandafter\uppercase\expandafter{\@title}} \par}
     \medskip
-    A dissertation submitted in partial satisfaction of the \par
+    A \dissertationname{} submitted in partial satisfaction of the \par
     requirements for the degree of \par
     \bigskip
     {\expandafter\expandafter{\@degree}} \par
@@ -367,7 +379,9 @@
 \vfill
 \begin{center}
 \fmfont
-\hfill \parbox{3in}{The Dissertation of {\@author}\\ is approved:} \\
+\hfill \parbox{3in}{
+    The \Dissertationname{} of {\@author}\\ is approved:
+} \\
 \bigskip \bigskip
 \hfill\rule{2.6in}{0.5pt}\\
 \hfill\makebox[2.6in][l]{\@chair, Chair }\\

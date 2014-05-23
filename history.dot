@@ -3,6 +3,7 @@
 // 2005-01-03  History of the ucscthesis.cls (3.2-ucsc)
 // 2006-03-02  Fixed history, added the latest iteration (3.2-ucsc-1)
 // 2006-05-04  Fixed history, added the latest iteration (3.2-ucsc-2), added page size
+// 2014-05-23  Added new node for Git repo version (3.2-ucsc-3)
 //
 
 digraph "ucscthesis.cls"
@@ -21,6 +22,7 @@ digraph "ucscthesis.cls"
 		ucscthesis321 [label="ucscthesis.cls\nversion=3.2-ucsc-1\ndate=02 March 2006\nportedby=Lawrence L. You (UCSC)"];
 		// Restored copyright notice to conform with Grad Div guidelines
 		ucscthesis322 [label="ucscthesis.cls\nversion=3.2-ucsc-2\ndate=04 May 2006\nportedby=Lawrence L. You (UCSC)"];
+		ucscthesis323 [label="ucscthesis.cls\nversion=3.2-ucsc-3\ndate=23 May 2014\nportedby=Lawrence L. You (UCSC)\nhackedby=Adam M. Novak (UCSC)"];
 
 		ucthesis30 -> ucscthesis30;
 		ucthesis30 -> ucthesis31;
@@ -30,4 +32,5 @@ digraph "ucscthesis.cls"
 		ucthesis32 -> ucthesis33;
 		ucscthesis32 -> ucscthesis321;
 		ucscthesis321 -> ucscthesis322;
+		ucscthesis322 -> ucscthesis323;
 	}
