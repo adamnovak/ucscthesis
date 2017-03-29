@@ -1,5 +1,5 @@
 This is the README file for the UCTHESIS-UCSC class for LaTeX. It corresponds to
-version 3.2-ucsc-3 or greater of the UCTHESIS-UCSC class (23 May 2014). These
+version 3.2-ucsc-4 or greater of the UCTHESIS-UCSC class (29 March 2017). These
 instructions supersede README.old.
 
 The original UCTHESIS class corresponds to version 3.2 of the UCTHESIS class (19
@@ -27,6 +27,13 @@ suitable for the guidelines mentioned above.
 4a. modify uctest.tex in this directory
     OR
 4b. copy uct1*.clo and ucthesis.cls to the directory with your .tex files
+
+*** Changes from 3.2-ucsc-4 (29 March 2017)
+
+- Modified abstract to be numbered in Roman numerals as required by the
+  current grad division guidelines.
+
+- Use PostScript fonts.
 
 *** Changes from 3.2-ucsc-3 (27 May 2014)
 
