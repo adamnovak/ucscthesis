@@ -23,6 +23,7 @@ digraph "ucscthesis.cls"
 		// Restored copyright notice to conform with Grad Div guidelines
 		ucscthesis322 [label="ucscthesis.cls\nversion=3.2-ucsc-2\ndate=04 May 2006\nportedby=Lawrence L. You (UCSC)"];
 		ucscthesis323 [label="ucscthesis.cls\nversion=3.2-ucsc-3\ndate=23 May 2014\nportedby=Lawrence L. You (UCSC)\nhackedby=Adam M. Novak (UCSC)"];
+		ucscthesis324 [label="ucscthesis.cls\nversion=3.2-ucsc-4\ndate=29 March 2017\nhackedby=Zhongpeng Lin (UCSC), Adam M. Novak (UCSC)"];
 
 		ucthesis30 -> ucscthesis30;
 		ucthesis30 -> ucthesis31;
@@ -33,4 +34,5 @@ digraph "ucscthesis.cls"
 		ucscthesis32 -> ucscthesis321;
 		ucscthesis321 -> ucscthesis322;
 		ucscthesis322 -> ucscthesis323;
+		ucscthesis323 -> ucscthesis324;
 	}
