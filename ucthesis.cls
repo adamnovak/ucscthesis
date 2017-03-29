@@ -441,17 +441,14 @@ Copyright \copyright\ by\par
 % ABSTRACT
 %
 % The ABSTRACT environment allows for multi-page abstracts which,
-% in accordance with UC rules, is numbered separately from the rest
-% of the rest of the dissertation in Arabic.  It requires definition
-% of the \title, \author, \degree, \field, \campus, and \chair macros.
+% in accordance with UCSC rules, is numbered along with other front 
+% matter pages in Roman numerals. It requires definition% of the 
+% \title, \author, \degree, \field, \campus, and \chair macros.
 
 
 \def\abstract{
 \begin{alwayssingle}
-\pagestyle{empty}
-\thispagestyle{empty}
 \addcontentsline{toc}{chapter}{\abstractname}
-%\setcounter{page}{1}
 \begin{center}
 {\fmfont
 {\bfseries \abstractname}\par
