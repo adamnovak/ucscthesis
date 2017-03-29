@@ -1,0 +1,62 @@
+This work is (C) 1988-2017 by Adam Novak, Zhongpeng Lin, Sol Katzman, Lawrence
+L. You, Daniel Gildea, BBF, Ethan Munson, and potentially other unknown
+contributors.
+
+This work may be distributed and/or modified under the conditions of the LaTeX
+Project Public License (LPPL), either version 1.3c of this license or (at your
+option) any later version. The LPPL 1.3c is available from:
+
+https://www.latex-project.org/lppl/lppl-1-3c.txt
+
+This work has the LPPL maintenance status "maintained". The current maintainer
+is Adam Novak, and is reachable through the Github repository at:
+
+https://github.com/adamnovak/ucscthesis
+
+This work, for the purposes of the LPPL, consists of the files LICENSE,
+ucscthesis.cls, uct10.clo, uct11.clo, uct12.clo, uctest.bib, and uctest.tex.
+
+This work is a derived work of one or more other works, also licensed under the
+LPPL. The maintainers of those original works are not the maintainer of this
+work, and do not offer any support for the present work.
+
+If you find this file in a Git or other version control repository, that
+repository is a derivative work of the work described above. All change
+information and original versions required by the LPPL should be available from
+the version control system.
+
+All changes from the version of UCTHESIS-UCSC obtained by Adam Novak from Kevin
+Karplus and Sol Katzman to the version distributed by him (on which the version
+you have is based) are available in in Git on Github, at:
+
+https://github.com/adamnovak/ucscthesis/commits/master
+
+This Git commit history is incorporated herein by reference.
+
+Additional change descriptions, as required by the LPPL, connecting the version
+obtained by Adam Novak to the original UCTHESIS-UCSC by Lawrence L. You, are
+presented here. Chages have been made by Sol Katzman to uctest.tex, to modify
+the page geometry, clarify the placement of appendicies, and describe the nocite
+command. The version of uctest.tex before these modifications is available here:
+
+https://github.com/adamnovak/ucscthesis/blob/74a6e7add819a534cec71ab9afc52f13a5d
+a29a1/uctest_2006mar18.tex
+
+Additional change descriptions, as required by the LPPL, connecting Lawrence L.
+You's version to the original UCTHESIS 3.2, are described in the README file
+available at:
+
+https://github.com/adamnovak/ucscthesis/blob/74a6e7add819a534cec71ab9afc52f13a5d
+a29a1/README.UCSC
+
+As of this writing, UCTHESIS 3.2 is available at the following locations:
+
+https://www.ctan.org/pkg/ucthesis?lang=en
+
+https://ctanmirror.speedata.de/2017-03-29/macros/latex/contrib/ucthesis
+
+
+
+
+
+
