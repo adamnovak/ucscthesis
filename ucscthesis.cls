@@ -786,7 +786,7 @@ by\par
   \chapter*{\listfigurename\@mkboth{\uppercase{\listfigurename}}%
 {\uppercase{\listfigurename}}}
    \addcontentsline{toc}{chapter}{\listfigurename}
-   {\ssp\@starttoc{lof}}\if@restonecol
+   {\dsp\@starttoc{lof}}\if@restonecol
     \twocolumn\fi}
 
 \def\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
@@ -803,7 +803,7 @@ by\par
   \chapter*{\listtablename\@mkboth{\uppercase{\listtablename}}%
 {\uppercase{\listtablename}}}
    \addcontentsline{toc}{chapter}{\listtablename}
-   {\ssp\@starttoc{lot}}\if@restonecol
+   {\dsp\@starttoc{lot}}\if@restonecol
   \twocolumn\fi}
 
 
